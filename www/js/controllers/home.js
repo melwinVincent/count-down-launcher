@@ -23,4 +23,10 @@ angular.module('ToyotaStarter').controller('HomeCtrl', ["$scope", "$timeout", "$
         
     }
 
+    $scope.$on('$ionicView.loaded', function() {
+        ionic.Platform.ready( function() {
+            if(navigator && navigator.splashscreen) navigator.splashscreen.hide();
+        });
+    })
+
 }]);

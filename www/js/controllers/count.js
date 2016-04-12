@@ -4,7 +4,12 @@ angular.module('ToyotaStarter').controller('CountCtrl', ["$scope", "$timeout", "
         console.log("countDown");
 
         $timeout(function() {
+            //angular.element($document[0].getElementsByClassName('count-button')[0]).removeClass('zoom');
+            angular.element($document[0].getElementsByClassName('count-button')[0]).addClass('zoom');
             $scope.count--;
+            $timeout(function() {
+                angular.element($document[0].getElementsByClassName('count-button')[0]).removeClass('zoom');
+            }, 750);
             
             if($scope.count === 0) {
                 return;
@@ -14,18 +19,24 @@ angular.module('ToyotaStarter').controller('CountCtrl', ["$scope", "$timeout", "
         }, 1250);
         
     }
-
+    //angular.element($document[0].getElementsByClassName('count-button')[0]).addClass('zoom');
+     $timeout(function() {
+                angular.element($document[0].getElementsByClassName('count-button')[0]).addClass('zoom');
+            });
     $scope.count = 5;
+   $timeout(function() {
+                angular.element($document[0].getElementsByClassName('count-button')[0]).removeClass('zoom');
+            },750);
     countDown();
 
     $timeout(function() {
         angular.element($document[0].getElementsByClassName('img-wrapper')[0]).addClass("reduce-opacity");
         
-    }, 7000);
+    }, 8250);
 
     $timeout(function() {
         $scope.showBackBtn = true;
-    }, 8500);
+    }, 9000);
 
     $scope.goBack = function(){
         console.log("goBack");

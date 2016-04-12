@@ -22,6 +22,11 @@
     left: 50%;
     margin-left: -150px;
     margin-top: -152px;
+    transform : scale(.25);
+    -webkit-transform : scale(.25);
+    transition : all .25s ease-in;
+    -webkit-transition : all .25s ease-in;
+    opacity: 0;
 }
 .content {
 	background: #000;
@@ -52,4 +57,9 @@
     margin-top: -24px;
     margin-left: -24px;
     font-size: 26px;
+}
+.zoom {
+     opacity: 1;
+    transform : scale(1);
+    -webkit-transform : scale(1);
 }
