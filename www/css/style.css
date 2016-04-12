@@ -1,0 +1,45 @@
+/* Empty. Add your own CSS if you like */
+.start-button {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: -152px;
+}
+.animate {
+	-webkit-animation-name:pulse-animation;
+    -webkit-animation-duration:2000ms;
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-timing-function:linear;
+    -webkit-animation-play-state:running
+}
+.clicked {
+	-webkit-transform:scale(.95)
+}
+.count-button {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: -152px;
+}
+.content {
+	background: #000;
+}
+
+.reduce-opacity {
+	opacity: 0;
+	transition:all 1s ease-in;
+}
+
+@-webkit-keyframes pulse-animation{
+    0%{-webkit-transform:scale(.95)}
+
+    25%{-webkit-transform:scale(0.975)}
+
+    50%{-webkit-transform:scale(1.0)}
+
+    75%{-webkit-transform:scale(0.975)}
+   
+    100%{-webkit-transform:scale(.95)}
+}
