@@ -1,4 +1,4 @@
-angular.module('ToyotaStarter').controller('CountCtrl', ["$scope", "$timeout", "$document", function($scope, $timeout, $document ) {
+angular.module('ToyotaStarter').controller('CountCtrl', ["$scope", "$timeout", "$document", "$ionicHistory", function($scope, $timeout, $document, $ionicHistory ) {
     
     function countDown() {
         console.log("countDown");
@@ -20,8 +20,17 @@ angular.module('ToyotaStarter').controller('CountCtrl', ["$scope", "$timeout", "
 
     $timeout(function() {
         angular.element($document[0].getElementsByClassName('img-wrapper')[0]).addClass("reduce-opacity");
-        $scope.hideCounter = true;
+        
     }, 7000);
+
+    $timeout(function() {
+        $scope.showBackBtn = true;
+    }, 8500);
+
+    $scope.goBack = function(){
+        console.log("goBack");
+         $ionicHistory.goBack();
+    }
 
 
 
